@@ -1,10 +1,10 @@
-// const Rate = require('../services/rate.service');
-const Rate = require('../database/models/rate.model');
+const rateService = require('../services/rate.service');
 const httpError = require('http-errors');
 
 exports.findAll = (req, res, next) => {
-    Rate.findAll((err, data) => {
-        if(err) next(httpError(500, err));
-        else res.status(200).json(data);
+    rateService.findAll().then(data => {
+        res.status(200).json(data);
+    }).catch(err => {
+        next(httpError(500, err));
     });
 };

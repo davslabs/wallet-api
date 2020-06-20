@@ -1,5 +1,11 @@
 const Rate = require('../database/models/rate.model');
 
-exports.findAll = async () => {
-    return await Rate.findAll();    
+exports.findAll = () => {
+    return new Promise((resolve, reject) => {
+        Rate.findAll().then(data => {
+            resolve(data)
+        }).catch(err => {
+            reject(err);
+        })
+    });  
 };

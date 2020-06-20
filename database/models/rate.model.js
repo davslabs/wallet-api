@@ -8,14 +8,12 @@ class Rate {
     }
 };
 
-Rate.findAll = result => {
-  sql.query(`SELECT * FROM rates`, (err, res) => {       
-    if(err) {
-      result(null, err);
-      return;
-    }
-
-    result(null, res);    
+Rate.findAll = () => {
+  return new Promise((resolve, reject)=> {
+    sql.query(`SELECT * FROM rates`, (err, rows, fields) => {
+      if(!!err) reject(err);
+      else resolve(rows[0]);
+    });
   });
 };
 
