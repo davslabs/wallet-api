@@ -22,11 +22,11 @@ app.use('/', core);
 app.use('/api/v1/', api);
 
 app.use((req, res, next) => {
-    next(httpError(404));
+  next(httpError(404));
 });
 
 app.use((err, req, res, next) => {
-    errorHandler(err, res);
+  errorHandler(err, res);
 });
 
 server.listen(port, () => console.log(`Rest API listening on port: ${port}`));
