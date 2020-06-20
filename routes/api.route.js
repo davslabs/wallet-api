@@ -14,7 +14,7 @@ router.get("/wallets", walletController.getAll);
 router.get("/wallet/:address/age", walletController.getAge);
 router.get("/wallet/:address/balance", walletController.getBalance);
 router.get(
-  "/wallet/:address/:currency/balance",
+  "/wallet/:address/balance/:currency",
   walletController.getBalanceInCurrency
 );
 
