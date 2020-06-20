@@ -61,7 +61,7 @@ if you want to run it with hot reload
 }
 ```
 
-### API REST
+### API V1
 
 #### Rates
 > (GET) /api/v1/rates
