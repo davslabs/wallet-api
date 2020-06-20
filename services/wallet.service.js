@@ -76,10 +76,10 @@ exports.getBalanceInCurrency = (address, currency) => {
       .then((balance) => {
         return rateService
           .getRateExchange(currency)
-          .then((exchangeRate) => {
+          .then((exchangeRate) => {            
             const balanceInCurrency = {
               type: exchangeRate.type,
-              balance: balance.value * exchangeRate.value,
+              balance: (balance.value / exchangeRate.value).toFixed(2),
             };
 
             resolve(balanceInCurrency);
