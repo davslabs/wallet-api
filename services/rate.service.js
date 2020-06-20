@@ -12,11 +12,23 @@ exports.findAll = () => {
   });
 };
 
-exports.getRateExchange = (currency) => {
+exports.getExchangeRate = (currency) => {
   return new Promise((resolve, reject) => {
     Rate.getExchangeRate(currency)
       .then((data) => {
         resolve(data);
+      })
+      .catch((err) => {
+        reject(err);
+      });
+  });
+};
+
+exports.updateExchangeRate = (value, currency) => {
+  return new Promise((resolve, reject) => {    
+    Rate.updateExchangeRate(value, currency)
+      .then(() => {
+        resolve(null);
       })
       .catch((err) => {
         reject(err);

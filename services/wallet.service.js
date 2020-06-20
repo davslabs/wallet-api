@@ -75,7 +75,7 @@ exports.getBalanceInCurrency = (address, currency) => {
     this.getBalance(address)
       .then((balance) => {
         return rateService
-          .getRateExchange(currency)
+          .getExchangeRate(currency)
           .then((exchangeRate) => {            
             const balanceInCurrency = {
               type: exchangeRate.type,
