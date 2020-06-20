@@ -1,5 +1,4 @@
 const axios = require("axios");
-const { response } = require("..");
 const API_URL = process.env.ETHERSCAN_API_URL;
 const API_KEY = process.env.ETHERSCAN_API_KEY;
 
