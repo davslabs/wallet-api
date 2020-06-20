@@ -64,7 +64,7 @@ if you want to run it with hot reload
 ### API REST
 
 #### Rates
-> (GET) /rates
+> (GET) /api/v1/rates
 
 _Query Parameters:_
 ```
@@ -80,7 +80,7 @@ _Query Parameters:_
 ]
 ```
 
-> (GET) /rate/:currency
+> (GET) /api/v1/rate/:currency
 
 _Query Parameters:_
 ```
@@ -95,7 +95,7 @@ _Example response:_
 }
 ```
 
-> (PUT) /rate/:currency
+> (PUT) /api/v1/rate/:currency
 
 _Query Parameters:_
 ```
@@ -112,7 +112,7 @@ _Respond a 200 status OK_
 
 ### Wallet
 
-> (GET) /wallets
+> (GET) /api/v1/wallets
 
 _Example response:_
 ```
@@ -131,7 +131,7 @@ _Example response:_
 }
 ```
 
-> (GET) /wallet/:address/age
+> (GET) /api/v1/wallet/:address/age
 
 
 _Query Parameters:_
@@ -148,7 +148,7 @@ _Example response:_
 }
 ```
 
-> (GET) /wallet/:address/balance
+> (GET) /api/v1/wallet/:address/balance
 
 _Query Parameters:_
 ```
@@ -162,7 +162,7 @@ _Example response:_
 }
 ```
 
-> (GET) /wallet/:address/balance/:currency/
+> (GET) /api/v1/wallet/:address/balance/:currency/
 
 _Query Parameters:_
 ```
