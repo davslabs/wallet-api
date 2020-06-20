@@ -35,4 +35,24 @@ Rate.getExchangeRate = (currency) => {
   });
 };
 
+Rate.updateExchangeRate = (value, currency) => {
+  return new Promise((resolve, reject) => {
+    sql.query(
+      `UPDATE rates SET value=${value} WHERE type=${currency}`,
+      (err, rows, fields) => {
+        if (!!err) reject(err);
+        
+        if (rows && rows.affectedRows > 0) {
+          resolve(null);
+        }
+
+        reject({
+          statusCode: 400,
+          message: "Could not update the selected currency",
+        });
+      }
+    );
+  });
+};
+
 module.exports = Rate;

@@ -6,6 +6,8 @@ const walletController = require("../controller/wallet.controller");
 
 // RATE ROUTES
 router.get("/rates", rateController.findAll);
+router.get("/rate/:currency", rateController.getExchangeRate)
+router.put("/rate/:currency", rateController.updateExchangeRate);
 
 // WALLET ROUTES
 router.get("/wallets", walletController.getAll);
