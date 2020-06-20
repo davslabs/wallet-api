@@ -8,7 +8,7 @@ exports.health = (req, res, next) => {
     };
 
     try {        
-        return res.status(200).json(healthCheck);
+        res.status(200).json(healthCheck);
     } catch(err) {
         next(httpError(503, err));
     }
