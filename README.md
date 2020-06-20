@@ -1,5 +1,9 @@
 # Dashboard Wallet REST API
 
+## Working demo at
+
+### https://test-wallet-rest-api.herokuapp.com/
+
 ## Environment Variables
 To make it run you should create a `.env` file at the root of the app with the following format:
 
@@ -57,7 +61,7 @@ if you want to run it with hot reload
 }
 ```
 
-### Api
+### API REST
 
 #### Rates
 > (GET) /rates
