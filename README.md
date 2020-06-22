@@ -108,7 +108,13 @@ _Body Parameters:_
 }
 ```
 
-_Respond a 200 status OK_
+_Example response:_
+```
+{
+	"type": "USD"
+	"value": "0.10"
+}
+```
 
 ### Wallet
 
