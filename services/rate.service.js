@@ -27,8 +27,8 @@ exports.getExchangeRate = (currency) => {
 exports.updateExchangeRate = (value, currency) => {
   return new Promise((resolve, reject) => {    
     Rate.updateExchangeRate(value, currency)
-      .then(() => {
-        resolve(null);
+      .then((data) => {
+        resolve(data);
       })
       .catch((err) => {
         reject(err);

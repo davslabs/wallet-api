@@ -16,6 +16,7 @@ exports.updateExchangeRate = (req, res, next) => {
   const { currency } = req.params;
   const { value } = req.body;
 
+
   if (value === undefined || value.length === 0) {
     next(httpError(400, { message: "Value is missing on request body" }));
     return;
@@ -23,8 +24,8 @@ exports.updateExchangeRate = (req, res, next) => {
 
   rateService
     .updateExchangeRate(value, currency)
-    .then(() => {
-      res.status(200).send();
+    .then((data) => {
+      res.status(200).json({type: currency, value: data});
     })
     .catch((err) => {
       next(httpError(500, err));

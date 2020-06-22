@@ -43,7 +43,7 @@ Rate.updateExchangeRate = (value, currency) => {
         if (!!err) reject(err);
         
         if (rows && rows.affectedRows > 0) {
-          resolve(null);
+          resolve(value);
         }
 
         reject({
